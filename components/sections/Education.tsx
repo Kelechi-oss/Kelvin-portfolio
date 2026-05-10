@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionShell } from "@/components/SectionShell";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import type { LucideIcon } from "lucide-react";
 import {
   CheckCircle2,
   Clock,
@@ -25,12 +26,7 @@ export type Semester = {
 
 const STATUS_META: Record<
   Semester["status"],
-  { 
-    label: string; 
-    color: string; 
-    icon: any;           // ← This fixes the type error
-    pct: number 
-  }
+  { label: string; color: string; icon: LucideIcon; pct: number }
 > = {
   completed: {
     label: "Completed",
@@ -64,7 +60,7 @@ export function Education({ semesters }: { semesters: Semester[] }) {
       title={
         <>
           Boston University Questrom <span className="gold-text">MBA</span>{" "}
-          (Class of '27)
+          (Class of &apos;27)
         </>
       }
       description="Management Science (STEM) — Concentration on Finance · Dean Merit Full-Tuition Scholarship. Live progress dashboard tracking every semester and course."

@@ -4,8 +4,10 @@
  */
 import { NextStudio } from "next-sanity/studio";
 import config from "@/sanity.config";
-export const dynamic = "force-static";
-export { metadata, viewport } from "next-sanity/studio";
+
+// Must be dynamic — Studio cannot be statically rendered
+export const dynamic = "force-dynamic";
+
 export default function StudioPage() {
   return <NextStudio config={config} />;
 }
