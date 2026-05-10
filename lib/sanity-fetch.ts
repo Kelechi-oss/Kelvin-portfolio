@@ -1,4 +1,3 @@
-// @ts-expect-error server-only is a Next.js side-effect import with no types
 import "server-only";
 
 import { client } from "@/sanity/lib/client";
