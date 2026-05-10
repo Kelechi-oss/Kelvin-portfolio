@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 export type Course = { name: string; status?: string };
+
 export type Semester = {
   _id?: string;
   title: string;
@@ -24,7 +25,12 @@ export type Semester = {
 
 const STATUS_META: Record<
   Semester["status"],
-  { label: string; color: string; icon: React.ComponentType<{ size?: number; className?: string }>; pct: number }
+  { 
+    label: string; 
+    color: string; 
+    icon: any;           // ← Fixed: relaxed type for Lucide icons
+    pct: number 
+  }
 > = {
   completed: {
     label: "Completed",
@@ -111,7 +117,6 @@ export function Education({ semesters }: { semesters: Semester[] }) {
                 </Badge>
               </div>
               <Progress value={meta.pct} />
-
               <ul className="mt-5 space-y-2.5">
                 {(s.courses ?? []).map((c) => (
                   <li
