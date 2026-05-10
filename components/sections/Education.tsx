@@ -28,7 +28,7 @@ const STATUS_META: Record<
   { 
     label: string; 
     color: string; 
-    icon: any;           // ← Fixed: relaxed type for Lucide icons
+    icon: any;           // ← This fixes the type error
     pct: number 
   }
 > = {
