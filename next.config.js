@@ -6,6 +6,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    serverComponentsExternalPackages: ["sanity", "@sanity/ui", "@sanity/icons"],
+  },
 };
 
 module.exports = nextConfig;
